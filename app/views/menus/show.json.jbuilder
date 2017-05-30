@@ -1,1 +1,1 @@
-json.partial! "chefs/chef", chef: @chef
+json.partial! "menus/menu", menu: @menu
