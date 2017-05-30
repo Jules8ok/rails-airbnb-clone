@@ -28,7 +28,7 @@ class MenusController < ApplicationController
 
     respond_to do |format|
       if @menu.save
-        format.html { redirect_to @cmenu, notice: 'Menu was successfully created.' }
+        format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
         format.json { render :show, status: :created, location: @menu }
       else
         format.html { render :new }
