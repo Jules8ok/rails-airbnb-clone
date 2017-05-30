@@ -42,8 +42,8 @@
             <% end %>
           </li>
           <li>
-            <%= link_to new_chef_path do %>
-            <i class="fa fa-cutlery"></i>  <%= t(".sign_out", default: "Be a chef") %>
+            <%= link_to new_menu_path do %>
+            <i class="fa fa-cutlery"></i>  <%= t(".sign_out", default: "Create your menu") %>
             <% end %>
           </li>
           <li>
@@ -63,7 +63,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Menus"), chefs_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Menus"), menus_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -72,8 +72,8 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li>
-          <%= link_to new_chef_path do %>
-          <%= t(".sign_out", default: "Be a chef") %></li>
+          <%= link_to new_menu_path do %>
+          <%= t(".sign_out", default: "Create your menu") %></li>
           <% end %>
           <li>
             <%= link_to pages_home_path do %>
