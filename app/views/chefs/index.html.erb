@@ -27,5 +27,23 @@
 </table>
 
 <br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+<% @chefs.each do |chef| %>
+
+<div class="card w-75" style="background-color: #999; border-color: #;">
+  <div class="card-block">
+    <h3 class="card-title" style="color: white;"><%= chef.name %></h3>
+    <p class="card-text" style="color: white;"><%= chef.description %> <br> <%= chef.price %>€/person</p>
+    <a href="#" class="btn btn-primary">Command</a>
+  </div>
+</div>
+ <% end %>
+ 
+    </div>      
+  </div>
+</div>
 
 <%= link_to 'New Chef', new_chef_path %>
