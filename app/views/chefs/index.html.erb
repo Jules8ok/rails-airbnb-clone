@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Chefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chefs.each do |chef| %>
+    <tr>
+      <td><%= chef.name %></td>
+      <td><%= chef.description %></td>
+      <td><%= chef.price %></td>
+      <td><%= link_to 'Show', chef %></td>
+      <td><%= link_to 'Edit', edit_chef_path(chef) %></td>
+      <td><%= link_to 'Destroy', chef, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+      <% @chefs.each do |chef| %>
+
+      <div class="card w-75" style="background-color: #999; border-color: #;">
+        <div class="card-block">
+          <h3 class="card-title" style="color: white;"><%= chef.name %></h3>
+          <p class="card-text" style="color: white;"><%= chef.description %> <br> <%= chef.price %>€/person</p>
+          <a href="#" class="btn btn-primary">Command</a>
+        </div>
+      </div>
+      <% end %>
+      
+    </div>      
+  </div>
+</div>
+
+<%= link_to 'New Chef', new_chef_path %>
