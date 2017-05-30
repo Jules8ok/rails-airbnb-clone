@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :chefs
+  resources :menus
+    resources :orders
   devise_for :users
   root to: 'pages#home'
   get 'pages/home'
