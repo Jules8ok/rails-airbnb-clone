@@ -1,74 +1,46 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
-  # GET /chefs
-  # GET /chefs.json
+
   def index
-    @menus = Menu.all
+    @menus = Menu.where("DATE(pick_up) > ?", Date.today).near('Brussels')
   end
 
-  # GET /chefs/1
-  # GET /chefs/1.json
   def show
   end
 
-  # GET /chefs/new
   def new
     @menu = Menu.new
   end
 
-  # GET /chefs/1/edit
+  def create
+    @menu = Menu.new(menu_params)
+    @menu.user_id = current_user.id
+    @menu.save
+    redirect_to menus_path
+  end
+
   def edit
   end
 
-  # POST /chefs
-  # POST /chefs.json
-  def create
-    @menu = Menu.new(menu_params)
-
-    respond_to do |format|
-      if @menu.save
-        format.html { redirect_to @menu, notice: 'Menu was successfully created.' }
-        format.json { render :show, status: :created, location: @menu }
-      else
-        format.html { render :new }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /chefs/1
-  # PATCH/PUT /chefs/1.json
   def update
-    respond_to do |format|
-      if @menu.update(menu_params)
-        format.html { redirect_to @menu, notice: 'Menu was successfully updated.' }
-        format.json { render :show, status: :ok, location: @menu }
-      else
-        format.html { render :edit }
-        format.json { render json: @menu.errors, status: :unprocessable_entity }
-      end
-    end
+    @menu.update(menu_params)
+    redirect_to menus_path
   end
 
-  # DELETE /menus/1
-  # DELETE /menus/1.json
   def destroy
     @menu.destroy
-    respond_to do |format|
-      format.html { redirect_to menus_url, notice: 'Menu was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to menus_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_menu
-      @menu = Menu.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def menu_params
-      params.require(:menu).permit(:name, :description, :price)
-    end
+  def set_menu
+    @menu = Menu.find(params[:id])
+  end
+
+  def menu_params
+    params.require(:menu).permit(:name, :description, :price, :address, :pick_up)
+  end
 end
+

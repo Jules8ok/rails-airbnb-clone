@@ -23,7 +23,13 @@ div {
 .card-inverse {
     color: rgba(255,255,255,.65);
 }
-
+.box-card {
+  background-color: rgba(255,255,255, 0.6);
+  width: 45%;
+  height: auto;
+  margin-left: 20%;
+  border-radius: 3%
+}
 .card {
     position: relative;
     display: -webkit-box;
@@ -39,6 +45,12 @@ div {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
 
+}
+
+.card-avatar {
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 
 body {
@@ -78,8 +90,16 @@ padding-right: 10%;
 
 .card-title {
     color: #69140E;
+    font-size: 40px;
+    text-align: center;
 }
 
 .card-text {
     color: black;
+    font-size: 20px;
+    margin: 0 0 10px 20px;
+}
+.mvbtngrp{
+  position: absolute;
+  right: 5%;
 }
