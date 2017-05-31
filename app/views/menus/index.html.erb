@@ -2,38 +2,34 @@
 
 <h1>Menus</h1>
 
-
-
-
-
 <% @menus.each do |menu| %>
-<div class="pad">
-  <div class="card card-inverse">
-    <img class="card-img" src="http://static.wixstatic.com/media/0c8d97d482cd4c658502fff90ec9275b.jpg_srz_769_270_85_22_0.50_1.20_0.00_jpg_srz" alt="Card image">
-    <div class="card-img-overlay">
-      <h4 class="card-title"><%= menu.name %></h4>
-      <p class="card-text"><%= menu.description %> <br> <%= menu.price %>€/per person</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      <div class="btn-group">
-  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Add to basket <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">1 person</a></li>
-    <li><a href="#">2 persons</a></li>
-    <li><a href="#">3 persons</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">4 persons</a></li>
-  </ul>
-</div>
+  <div class="pad">
+    <div class="card card-inverse">
+      <img class="card-img" src="http://static.wixstatic.com/media/0c8d97d482cd4c658502fff90ec9275b.jpg_srz_769_270_85_22_0.50_1.20_0.00_jpg_srz" alt="Card image">
+      <div class="card-img-overlay">
+        <div class="box-card">
+          <h4 class="card-title"><%= menu.name %></h4>
+          <p class="card-text"><%= menu.description %> <br> <%= menu.price %>€/per person</p>
+          <p class="card-text">Pick-up location: <%= menu.address %> <br> Pick-up time: <%= menu.pick_up.strftime("%H:%M %m/%d/%Y  ") %>
+            <div class="btn-group mvbtngrp">
+              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Add to basket <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">1 person</a></li>
+                <li><a href="#">2 persons</a></li>
+                <li><a href="#">3 persons</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">4 persons</a></li>
+              </ul>
+              <a href=""></a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<br><br>
+  <br><br>
 <% end %>
 
-
 <%= link_to 'New Menu', new_menu_path %>
-
-
-
