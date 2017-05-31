@@ -10,11 +10,11 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
 </head>
 <body>
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-  
+  <%= render 'shared/navbar' unless @skip_it %>
+  <%= render 'shared/flashes' unless @skip_it %>
+
   <%= yield %>
-  <%= render 'shared/footers' %>
+  <%= render 'shared/footers' unless @skip_it %>
   <%= javascript_include_tag 'application' %>
 </body>
 </html>
