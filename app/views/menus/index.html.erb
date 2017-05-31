@@ -15,8 +15,8 @@
           <p class="card-text">
             Pick-up location: <%= menu.address %>
           </p>
-          <br>
-          Pick-up time: <%= menu.pick_up.strftime("%H:%M %m/%d/%Y  ") %>
+          <p class="card-text">
+            Pick-up time: <%= menu.pick_up.strftime("%H:%M %m/%d/%Y")%>
           <div class="btn-group mvbtngrp">
             <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Add to basket <span class="caret"></span>
