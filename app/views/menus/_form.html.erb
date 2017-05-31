@@ -5,6 +5,8 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price %>
+    <%= f.input :address %>
+    <%= f.datetime_select :pick_up, :ampm => true, :minute_step => 30%>
   </div>
 
   <div class="form-actions">
