@@ -22,11 +22,11 @@
               Add to basket <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="#">1 person</a></li>
-              <li><a href="#">2 persons</a></li>
-              <li><a href="#">3 persons</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">4 persons</a></li>
+              <% (1..4).each do |i| %>
+                <li>
+                  <%= link_to "#{i} Person", new_menu_order_path(menu.id, quantity: i) %>
+                </li>
+              <% end %>
             </ul>
             <!-- <a href=""></a> -->
           </div>

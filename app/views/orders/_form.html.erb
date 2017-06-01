@@ -1,0 +1,11 @@
+<%= simple_form_for([@menu, @order]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.number_field :quantity, :value => params[:quantity] %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
