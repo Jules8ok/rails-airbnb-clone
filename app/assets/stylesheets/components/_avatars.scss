@@ -2,9 +2,11 @@
   width: 30px;
   border-radius: 50%;
 }
-.avatar-large {
-  width: 50px;
+.avatar-larg {
   border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 .avatar-bordered {
   width: 30px;
