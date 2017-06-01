@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p> <strong> SHOW </strong></p>
+<p> <strong> Thank you for your order! </strong></p>
+<p> Please note your order details below:</p>
+<p>You ordered  <%= @menu.name %>
+  <p>for <%= @order.quantity %> person(s) to be picked up at</p>
+  <%= @menu.pick_up.strftime("%H:%M %m/%d/%Y") %>
+  <p>at this address: <%= @menu.address %> </p>
 
-
-<%= link_to 'Back', menus_path %>
+  <%= link_to 'Browse the Menus', menus_path %>
