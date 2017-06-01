@@ -1,7 +1,7 @@
 <div class="navbar-wagon" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo.jpg" %>
+  <%= image_tag "http://res.cloudinary.com/dxdqe1twn/image/upload/v1496322968/ooo_hqtevl.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -21,15 +21,16 @@
     <!-- Notification -->
     <%= link_to root_path, class: "navbar-wagon-item navbar-wagon-link" do %>
     <div class="badge-container">
-      <i class="fa fa-envelope-o"></i>
-      <div class="badge badge-blue">3</div>
+      <i class="fa fa-shopping-basket"></i>
+     <!-- <div class="badge badge-blue">3</div> BADGE !!!!! !!!!!!!!!!!!-->
     </div>
     <% end %>
 
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to edit_user_registration_path do %>

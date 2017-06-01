@@ -17,7 +17,9 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'omniauth-facebook', '~> 3.0.0'
 gem "geocoder"
-
+gem 'cloudinary' 
+gem 'carrierwave', '~> 0.11.2'
+ 
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
