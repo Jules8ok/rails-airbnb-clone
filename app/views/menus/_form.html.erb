@@ -1,15 +1,23 @@
 <%= simple_form_for(@menu) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :address %>
-    <%= f.datetime_select :pick_up, :ampm => true, :minute_step => 30%>
-  </div>
+<div class="form-inputs">
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :address %>
+  <%= f.datetime_select :pick_up, :ampm => true, :minute_step => 30%>
+</div>
+<br>
+<%= f.input :photo %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<%= f.input :photo_cache, as: :hidden %>
+<br>
+<div class="form-actions">
+
+</div>
+<br>
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
 <% end %>

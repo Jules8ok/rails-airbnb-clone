@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531101508) do
+ActiveRecord::Schema.define(version: 20170601092654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170531101508) do
     t.string   "address"
     t.integer  "user_id"
     t.datetime "pick_up"
+    t.string   "photo"
     t.index ["user_id"], name: "index_menus_on_user_id", using: :btree
   end
 
