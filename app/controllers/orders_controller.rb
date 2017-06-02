@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
 
   def show
     @menu = Menu.find(params[:menu_id])
+
   end
 
   def new
@@ -21,6 +22,8 @@ class OrdersController < ApplicationController
   	@order = Order.new(order_params)
     @order.user_id = current_user.id
     @order.menu_id = params[:menu_id]
+    @menu = Menu.find(params[:menu_id])
+    @order.amount = @menu.price * @order.quantity
 
     if @order.save
       redirect_to menu_order_path(params[:menu_id], @order)
@@ -35,7 +38,10 @@ class OrdersController < ApplicationController
 
   def destroy
   	@order.destroy
+  end
 
+  def myorders
+    @myorders = Order.where(user_id: current_user.id).uniq
   end
 
   private
@@ -45,6 +51,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:quantity, :pick_up)
+    params.require(:order).permit(:quantity, :pick_up, :price)
   end
 end

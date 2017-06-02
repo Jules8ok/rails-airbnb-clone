@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :menus do
     resources :orders
   end
-  root to: 'pages#home'
+  root to: 'menus#index'
   get 'pages/home'
+
+  get 'myorders', to: 'orders#myorders'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

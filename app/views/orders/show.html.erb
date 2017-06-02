@@ -7,4 +7,6 @@
   <%= @menu.pick_up.strftime("%H:%M %m/%d/%Y") %>
   <p>at this address: <%= @menu.address %> </p>
 
+  <p>Your total cost for this order is <%= @order.amount %> euros</p>
+
   <%= link_to 'Browse the Menus', menus_path %>
