@@ -1,0 +1,11 @@
+<h1>A summary history of your orders with Share My Food</h1>
+
+<% @myorders.each do |order| %>
+  <p><%= order.menu.name %></p>
+  <p> Order Date: <%= order.menu.pick_up.strftime("%m/%d/%Y") %></p>
+  <p> Total Amount: <%= order.amount %> euros</p>
+  <br>
+<% end %>
+<br>
+<br>
+<br>
